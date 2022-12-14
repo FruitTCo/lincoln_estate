@@ -1,0 +1,34 @@
+{/* service charge card */}
+        <View
+          style={{
+            backgroundColor: 'lightblue',
+            borderRadius: Dimensions.get("window").height * 0.01,
+            paddingVertical: Dimensions.get("window").height * 0.03,
+            paddingHorizontal: Dimensions.get("window").height * 0.025,
+          }}
+        >
+
+          {/* card top */}
+          <View
+            style={{
+              alignItems: 'center'
+            }}
+          >
+            {/* user image */}
+            <Avatar.Image
+              source={{ uri: "https://avatars.githubusercontent.com/u/45280368?v=4" }}
+              size={100}
+            />
+
+            {/* name */}
+            <Text
+              style={{
+                marginTop: Dimensions.get("window").height * 0.01,
+                fontSize: fontScale(18),
+                fontFamily: "Poppins_500Medium"
+              }}
+            >Solomon Momoh</Text>
+          </View>
+
+          {/* other info */}
+        </View>
