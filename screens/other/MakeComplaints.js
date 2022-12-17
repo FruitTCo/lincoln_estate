@@ -1,5 +1,5 @@
 import { Alert, Dimensions, Image, Keyboard, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import CustomBorderInput from '../../components/CustomBorderInput'
 import fontScale from '../../utils/fontScale'
@@ -35,10 +35,14 @@ export default function MakeComplaints({ navigation }) {
 
   const validateTextInput = () => {
     setVerifying(true)
-    if (!text.trim() || text.lenght < 150) {
+    if (!text.trim() || text.lenght < 10) {
       setVerifying(false)
       return _showAlert({ text: "At least 150 words needed to make a complaint!" })
     }
+  }
+
+  const trackTextCount = (count) => {
+    setTextCount(count)
   }
 
   const _submitComplaint = async () => {
@@ -150,6 +154,16 @@ export default function MakeComplaints({ navigation }) {
               multiline={true}
               scrollEnabled={true}
               autoCorrect={true}
+              maxLength={3000}
+              onChangeText={(value) => {
+                setText(value)
+                trackTextCount(value.length)
+                if (value.length >= 150) {
+                  return setFormValid(true)
+                } else {
+                  return setFormValid(false)
+                }
+              }}
               style={{
                 fontFamily: "Poppins_500Medium",
                 fontSize: fontScale(16),
