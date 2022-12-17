@@ -146,10 +146,10 @@ const DrawerContent = (props) => {
             />
             <DrawerItem
               icon={({ color, size }) => (
-                <Ionicons name="bookmark-outline" size={size} color={props.state.index === 3 ? "lightblue" : color} />
+                <Ionicons name="bookmark-outline" size={size} color={props.state.index === 3 || props.state.index === 6 ? "lightblue" : color} />
               )}
-              label="My Complaints"
-              labelStyle={[styles.label, props.state.index === 3 ? { color: "lightblue" } : null]}
+              label="Complaints"
+              labelStyle={[styles.label, props.state.index === 3 || props.state.index === 6 ? { color: "lightblue" } : null]}
               onPress={() => { props.navigation.navigate('Complaints') }}
             />
             <DrawerItem

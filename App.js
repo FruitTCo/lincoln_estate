@@ -161,7 +161,7 @@ export default function App() {
               <Drawer.Screen name="Settings" component={SettingsScreen} />
               <Drawer.Screen name='PayHistory' component={PaymentHistory} />
               <Drawer.Screen name='CreateComplaint' component={MakeComplaints} />
-              <Drawer.Screen name='ReportEmergency' component={ReportEmergency} />
+              <Drawer.Screen name='ReportEmergency' component={ReportEmergency} options={{ swipeEnabled: false }} />
               <Drawer.Screen name='Notification' component={NotificationScreen} />
             </Drawer.Navigator>
           )

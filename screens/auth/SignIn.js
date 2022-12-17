@@ -16,11 +16,11 @@ const SignIn = ({ navigation }) => {
 
     const { signIn } = useContext(AuthContext);
 
-    const emailRef = useRef(null)
+    const emailRef = useRef()
 
-    const passwordRef = useRef(null)
+    const passwordRef = useRef()
 
-    const animation = useRef(null);
+    const animation = useRef();
 
     const [verifying, setVerifying] = useState(false)
 
